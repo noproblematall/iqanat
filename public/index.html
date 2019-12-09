@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">    
+    
+    <title>IQanat High School</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #F2F2F2 !important;
+      }      
+      b {font-weight: bold !important;}
+      @media (max-width: 990px) {
+        .ymap_size {
+          width: 100%;
+          height: 300px !important;
+        }
+      }
+    </style>
+  </head>
+  <body onload="wow_init()">
+    <noscript>
+      <strong>We're sorry but hello doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+  <script>
+    function wow_init() {
+      let our_pupils = document.getElementById('our_pupils')
+      let prev = our_pupils.querySelector('.carousel__control--prev')
+      prev.classList.add("wow", "slideInRight")
+      let next = our_pupils.querySelector('.carousel__control--next')
+      next.classList.add("wow", "slideInRight")
+      new WOW().init();
+    }
+  </script>
+  <script defer>
+    
+    $(document).ready(function(){
+      let window_height = window.innerHeight;
+      window.addEventListener('scroll', function() {
+        let intro_title = document.getElementById('school_instruction')
+        let school_value_title = document.getElementById('school_value_title')
+        let our_pupils_title = document.getElementById('our_pupils_title')
+        let calendar_title = document.getElementById('calendar_title')
+        let proceed = document.getElementById('proceed')
+        let proceed_video = document.getElementById('proceed_video')
+        let information_arrive = document.getElementById('information_arrive')
+        let information_arrive_image = document.getElementById('information_arrive_image')
+        let for_teacher = document.getElementById('for_teacher')
+        let for_teacher_video = document.getElementById('for_teacher_video')
+        if(window.pageYOffset > intro_title.offsetTop){
+          $('#intro_title').removeClass().removeAttr('style');  
+        }else{
+          $('#intro_title').addClass('wow fadeInDown animated');
+          $('#intro_title').css('visibility', 'visible')
+        }
+
+        if(window.pageYOffset > school_value_title.offsetTop || window_height + window.pageYOffset < school_value_title.offsetTop){
+          $('#school_value_title').removeClass().removeAttr('style'); 
+        }else{
+          $('#school_value_title').addClass('wow fadeInDown animated');
+          $('#school_value_title').css('visibility', 'visible')
+        }
+
+        if(window.pageYOffset > our_pupils_title.offsetTop || window_height + window.pageYOffset < our_pupils_title.offsetTop){
+          $('#our_pupils_title').removeClass().removeAttr('style'); 
+        }else{
+          $('#our_pupils_title').addClass('wow fadeInDown animated');
+          $('#our_pupils_title').css('visibility', 'visible')
+        }
+
+        if(window.pageYOffset > calendar_title.offsetTop || window_height + window.pageYOffset < calendar_title.offsetTop){
+          $('#calendar_title').removeClass().removeAttr('style'); 
+        }else{
+          $('#calendar_title').addClass('wow fadeInDown animated');
+          $('#calendar_title').css('visibility', 'visible')
+        }
+
+        if(window_height + window.pageYOffset < proceed.offsetTop){
+          $('#proceed').removeClass().removeAttr('style');
+          $('#proceed_video').removeClass().removeAttr('style');
+          $('#information_arrive').removeClass().removeAttr('style');
+          $('#information_arrive_real_image').removeClass().removeAttr('style');
+          $('#for_teacher').removeClass().removeAttr('style');
+          $('#for_teacher_video').removeClass().removeAttr('style');
+        }else{
+          $('#proceed').addClass('wow fadeInUp animated');
+          $('#proceed').css('visibility', 'visible')
+        }
+
+        if(window_height + window.pageYOffset > proceed_video.offsetTop){
+          setTimeout(function() {
+            $('#proceed_video').addClass('wow fadeInUp animated');
+            $('#proceed_video').css('visibility', 'visible')
+          }, 500);
+        }
+
+        if(window_height + window.pageYOffset > information_arrive.offsetTop){
+          setTimeout(function() {
+            $('#information_arrive').addClass('wow fadeInUp animated');
+            $('#information_arrive').css('visibility', 'visible')
+          }, 500);
+        }
+
+        if(window_height + window.pageYOffset > information_arrive_image.offsetTop){
+          setTimeout(function() {
+            $('#information_arrive_real_image').addClass('wow fadeInUp animated');
+            $('#information_arrive_real_image').css('visibility', 'visible')
+          }, 500);
+        }
+
+        if(window_height + window.pageYOffset > for_teacher.offsetTop){
+          setTimeout(function() {
+            $('#for_teacher').addClass('wow fadeInUp animated');
+            $('#for_teacher').css('visibility', 'visible')
+          }, 500);
+        }
+
+        if(window_height + window.pageYOffset > for_teacher_video.offsetTop){
+          setTimeout(function() {
+            $('#for_teacher_video').addClass('wow fadeInUp animated');
+            $('#for_teacher_video').css('visibility', 'visible')
+          }, 500);
+        }
+
+      })
+
+    })
+  </script>
+</html>
