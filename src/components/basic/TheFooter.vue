@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <!-- <img src="@/assets/map.png" alt="Map" srcset=""> -->
+        
         <yandex-map :coords="coords" zoom="7" ymap-class="ymap_size" v-if="flag">
             <ymap-marker 
                 :coords="coords" 

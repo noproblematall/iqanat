@@ -1,4 +1,4 @@
-# Iqanat project
+# Iqanat project(Vuejs Landing Page)
 
 ## Project setup
 ```
